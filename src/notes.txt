@@ -1,6 +1,0 @@
-To deploy a smart contract using ganache
--> add network in metamask as localhost with rpc url from ganache and also the chain id.
--> use a dummy address and private keys and import the account to metamask.
--> go to terminal and type
-    forge create SimpleStorage --interactive
--> now enter the private key    
