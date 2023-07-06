@@ -35,4 +35,45 @@
     cast --to-base 0x714c2 dec
     -> cast is built in function in foundry
 
--> in the transaction we have nonce and using this we can count out transactions and also replay our txns usin this same nonce
+-> in the transaction we have nonce and using this we can count out transactions and also replay our txns usin this same nonce.
+
+
+INTERACTING WITH THE CONTRACT USING CLI
+
+->create a .env filee
+->store private key and rpc_url in it
+-> in bash:
+    source .env
+    echo $PRIVATE_KEY
+    -> now instead of typing in your private key or rpc url do this
+    ->forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+
+***ERROR IN .env FILE, WHAT TO DO?***
+error:
+$ source .env
+PRIVATE_KEY: command not found
+RPC_URL: command not found
+
+solution:
+
+The error message you're encountering suggests that the shell is treating the lines in your .env file as commands rather than environment variable assignments. To resolve this issue, you need to modify the format of your .env file.
+
+The .env file should consist of key-value pairs, where each key-value pair is on a separate line and follows the format KEY=VALUE. Additionally, there should be no spaces surrounding the equal sign.
+
+Here's the corrected version of your .env file:
+
+PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+RPC_URL=http://127.0.0.1:8545
+
+->you can pass encrypted key instead of exposing keys
+    -> forge script --help
+    -> look into wallet options -keystore
+
+
+***Important***
+For the moment, a `$PRIVATE_KEY` in my `.env` file is cool, so long as I dont expose the `.env` file.
+
+But for real money, I wont do that. I will use `--interactive` or a keystore file with a password once foundry adds that.
+
+***other options***
+dapptools-> ethsign
