@@ -75,5 +75,5 @@ For the moment, a `$PRIVATE_KEY` in my `.env` file is cool, so long as I dont ex
 
 But for real money, I wont do that. I will use `--interactive` or a keystore file with a password once foundry adds that.
 
-***other options***
+***other options to keep keys safe***
 dapptools-> ethsign
